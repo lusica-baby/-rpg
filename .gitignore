@@ -9,3 +9,9 @@ __pycache__/
 
 # 素材原始包不从仓库走（体积大、来自用户本地）
 ming_tilesets/
+
+# 真机走查截图：playtest 每跑一次就整批重写（49 张 / 20 MB），提交它等于
+# 让 git status 永远脏。留盘上自己看就行，别人 clone 后跑一次 playtest 也能得到。
+# 要长期留存的素材规格 / 对照图放 docs/accept/portraits/，那些是入库的。
+docs/accept/m*/
+docs/accept/day1/

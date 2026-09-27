@@ -65,7 +65,10 @@ DIRKEY = {2: "down", 4: "left", 6: "right", 8: "up"}
 DIRVEC = {2: (0, 1), 4: (-1, 0), 6: (1, 0), 8: (0, -1)}
 LOG = []
 
-OUT = [os.path.join(ROOT, "docs", "accept", "m1")]     # 当前出图目录
+# 当前出图目录。落在 docs/accept/m*/ 下但**被 .gitignore 挡着** —— 每跑一次
+# 整批重写，跟进版本库只会让 git status 永远脏，而这批图只是"我自己核对用"的
+# 中间产物；长期留存的规格对照图另放 docs/accept/portraits/。
+OUT = [os.path.join(ROOT, "docs", "accept", "m1")]
 CNT = {}                                               # 目录 -> 已出图数
 
 

@@ -126,8 +126,10 @@ tools/
   import_*.py         素材导入（四类源料形态，各一个脚本，幂等）
 CuzhiDemo/            生成的游戏工程（构建产物，勿手改）
 剧本/                  改编文本与场景清单
-docs/accept/           走查截图（逐事件、逐地图）
-docs/screenshots/      README 用图
+docs/accept/           验收产物
+  portraits/           素材规格与对照图（脸图规格、重画需求…）—— 长期留存
+  m*/                  playtest 真机走查截图 —— 每跑一次即整批重写，已 gitignore
+docs/screenshots/      README 用图（5 张精选）
 执行大纲.md            范围与验收标准
 引擎契约.md            引擎隐藏约定汇总
 ```
