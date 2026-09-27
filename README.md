@@ -103,8 +103,13 @@ python tools/validate_project.py   # 静态校验（预期 PASS 20/20）
 python tools/playtest.py           # 真机走查（需 RPG Maker MZ 装在默认路径）
 ```
 
-只装了 Python 也能跑前三条（依赖 Pillow）；`playtest.py` 需要本机有 MZ 引擎。
-`build_project.py` 需要本机装有 RPG Maker MZ（模板取自它的 `newdata/`）。
+四条里前三条只需要 Python + Pillow。**仓库之外**的依赖用环境变量指，工具里不写死绝对路径：
+
+| 环境变量 | 指什么 | 谁需要 |
+|---|---|---|
+| `RPGMAKER_MZ` | MZ 安装目录（取 `newdata/` 当模板） | `build_project.py` |
+| `MING_TILESETS` | 图块源包（第三方素材，体积大、不入库） | `build_tiles.py` |
+| `AB_NODE` / `AB_CLI` | `agent-browser` 的 node 与入口脚本 | `playtest.py` |
 
 ## 目录结构
 

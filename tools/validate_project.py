@@ -483,7 +483,7 @@ def main(root):
 
 
 if __name__ == "__main__":
-    target = sys.argv[1] if len(sys.argv) > 1 else os.path.join(
-        r"C:\Users\lenovo\WorkBuddy\2026-09-22-19-16-43\rpgmaker-ai-pipeline", "CuzhiDemo"
-    )
+    # 默认目标从本文件位置推 —— 别写死绝对路径，仓库是要给别人 clone 的。
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    target = sys.argv[1] if len(sys.argv) > 1 else os.path.join(root, "CuzhiDemo")
     sys.exit(main(target))

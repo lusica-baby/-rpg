@@ -13,8 +13,22 @@ rem ---------------------------------------------------------------
 title Cuzhi - local playtest
 cd /d "%~dp0"
 
-set "PY=C:\Users\lenovo\.workbuddy\binaries\python\envs\default\Scripts\python.exe"
-if not exist "%PY%" set "PY=python"
+rem Pick whichever Python this machine actually has, in order: PATH -> py launcher
+rem -> the portable env on the machine this project was built on. Anyone who clones
+rem the repo gets the first branch; the hardcoded path is only a last resort.
+rem (Keep this file ASCII-only: cmd.exe reads .bat as the OEM codepage, so non-ASCII
+rem  text here turns into mojibake on other people's machines.)
+set "PY="
+where python >nul 2>nul && set "PY=python"
+if not defined PY ( where py >nul 2>nul && set "PY=py" )
+if not defined PY set "PY=C:\Users\lenovo\.workbuddy\binaries\python\envs\default\Scripts\python.exe"
+
+rem Probe by running it: a Store-alias "python" exists but only opens the Store.
+"%PY%" --version >nul 2>nul || (
+  echo [ERROR] No usable Python found. Install Python 3, add it to PATH, retry.
+  pause
+  exit /b 1
+)
 
 start "" /min "%PY%" "%~dp0tools\serve_game.py" 8321
 timeout /t 3 /nobreak >nul

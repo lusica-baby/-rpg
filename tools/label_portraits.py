@@ -10,7 +10,8 @@ import sys
 import numpy as np
 from PIL import Image, ImageDraw
 
-CLIP = r"C:\Users\lenovo\.workbuddy\clipboard-images"
+# 剪贴板图片目录每台机器不一样，用环境变量指；默认值是本机那套。
+CLIP = os.environ.get("PORTRAIT_CLIP", r"C:\Users\lenovo\.workbuddy\clipboard-images")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "docs", "accept", "portraits")
 TAG = 8                      # 像素值低于「背景中位数 - TAG」视为前景

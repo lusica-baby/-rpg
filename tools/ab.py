@@ -29,8 +29,12 @@ import sys
 import tempfile
 import time
 
-NODE = r"C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2-3\node.exe"
-AB = r"C:\Users\lenovo\.workbuddy\binaries\node\workspace\node_modules\agent-browser\bin\agent-browser.js"
+# 本机 agent-browser 的位置。换机器（或它升级换了目录）用环境变量覆盖，
+# 别改这里 —— 这个文件属于工程，不该焊死一台机器的安装路径。
+NODE = os.environ.get("AB_NODE",
+                      r"C:\Users\lenovo\.workbuddy\binaries\node\versions\22.22.2-3\node.exe")
+AB = os.environ.get("AB_CLI",
+                    r"C:\Users\lenovo\.workbuddy\binaries\node\workspace\node_modules\agent-browser\bin\agent-browser.js")
 # 独立会话名。用 default 会撞上别处残留的守护进程，导致 open 直接挂死。
 SESSION = os.environ.get("AB_SESSION", "pt")
 

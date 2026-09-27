@@ -3,7 +3,7 @@
 import os
 from PIL import Image, ImageDraw
 
-R = r"C:\Users\lenovo\WorkBuddy\2026-09-22-19-16-43\rpgmaker-ai-pipeline"
+R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FACES = [("ChengMing", "成名"), ("ChengZi", "成子"), ("Youth", "村中少年")]
 CHARS = [("$ChengMing", "成名"), ("$ChengZi", "成子"), ("$LiXu", "里胥"),
          ("$Witch", "驼背巫"), ("$Zai", "宰"), ("$Guard", "差役(备用)")]

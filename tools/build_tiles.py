@@ -36,7 +36,9 @@ from PIL import Image, ImageDraw
 TILE = 48
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-SRC = r"C:\Users\lenovo\Downloads\ming_tilesets"
+# 图块源包（第三方素材）体积大、不入库，位置因机器而异 —— 用环境变量指。
+SRC = os.environ.get("MING_TILESETS",
+                     os.path.join(os.path.expanduser("~"), "Downloads", "ming_tilesets"))
 OUT = os.path.join(ROOT, "assets", "img", "tilesets")
 BUILD = os.path.join(ROOT, "build")
 

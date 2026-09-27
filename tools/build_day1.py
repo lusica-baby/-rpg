@@ -14,9 +14,10 @@ import json
 import os
 import shutil
 
-MZ = r"D:\Steam\steamapps\common\RPG Maker MZ"
+# MZ 装在哪台机器都不一样，用环境变量覆盖；下面那个只是本机的默认值。
+MZ = os.environ.get("RPGMAKER_MZ", r"D:\Steam\steamapps\common\RPG Maker MZ")
 TEMPLATE = os.path.join(MZ, "newdata")
-ROOT = r"C:\Users\lenovo\WorkBuddy\2026-09-22-19-16-43\rpgmaker-ai-pipeline"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TARGET = os.path.join(ROOT, "CuzhiDemo")
 # 自制素材。目录结构与工程一致，构建时整棵覆盖过去。
 ASSETS = os.path.join(ROOT, "assets")

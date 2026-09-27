@@ -26,7 +26,8 @@ import game_data as G
 import prune_assets as P
 from build_tiles import cell_of      # 仅用于渲染自检，不参与写盘
 
-MZ = r"D:\Steam\steamapps\common\RPG Maker MZ"
+# 引擎装在哪台机器都不一样：拿环境变量覆盖，别把它焊死在仓库里。
+MZ = os.environ.get("RPGMAKER_MZ", r"D:\Steam\steamapps\common\RPG Maker MZ")
 TEMPLATE = os.path.join(MZ, "newdata")
 TARGET = os.path.join(ROOT, "CuzhiDemo")
 ASSETS = os.path.join(ROOT, "assets")
