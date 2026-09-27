@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+  Pages 入口页。仓库根目录的 index.html —— GitHub Pages 的短地址
+  https://<用户名>.github.io/<仓库名>/ 会命中这里，再跳到真正的游戏目录。
+
+  游戏本体在 CuzhiDemo/，这里用相对路径跳转，所以仓库改名后不用改这个文件。
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>《促织》· 在线试玩</title>
+<meta http-equiv="refresh" content="2; url=CuzhiDemo/">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    background: #141018;
+    font: 15px/1.7 "Songti SC", "SimSun", "Noto Serif CJK SC", serif;
+    color: #cfc7d8;
+  }
+  main { width: min(88vw, 560px); text-align: center; padding: 32px 0; }
+  img { width: 100%; display: block; border-radius: 4px;
+        box-shadow: 0 12px 40px rgba(0,0,0,.55); }
+  h1 { margin: 26px 0 6px; font-size: 20px; font-weight: 500;
+       letter-spacing: .18em; color: #f0ebf5; }
+  p  { margin: 0 0 20px; font-size: 13px; color: #8d8497; }
+  a  { display: inline-block; padding: 10px 28px;
+       border: 1px solid #6d5a86; border-radius: 999px;
+       color: #d8c9ea; text-decoration: none; letter-spacing: .1em;
+       transition: background .25s, border-color .25s; }
+  a:hover { background: #2a2135; border-color: #a47bc9; }
+  footer { margin-top: 30px; font-size: 12px; color: #5f5869; }
+  footer a { display: inline; padding: 0; border: 0; color: #8d8497;
+             text-decoration: underline; }
+</style>
+</head>
+<body>
+<main>
+  <img src="docs/screenshots/01-title.png" alt="《促织》标题画面">
+  <h1>正 在 载 入</h1>
+  <p>若未自动跳转，请点下方按钮。进入后<b>先点一下画面</b>才会有声音。</p>
+  <a href="CuzhiDemo/">开 始 游 戏</a>
+  <footer>源码与制作管线 → <a href="README.md">README</a></footer>
+</main>
+</body>
+</html>
